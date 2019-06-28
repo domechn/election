@@ -1,15 +1,10 @@
-# goelection
+# github.com/domgoer/election
 
-go语言实现的主从选举
+主从选举
 
 ## 依赖
 
-`etcd`或者`zookeeper`
-
-## Feature
-
-1. 主从选举
-2. 依赖奔溃/恢复 状态自动切换
+ `etcd` 或者 `zookeeper` 
 
 ## Example
 
@@ -17,19 +12,24 @@ go语言实现的主从选举
 package main
 
 import (
-    "goelection"
-    "goelection/etcd"
+    "github.com/domgoer/election"
+    "github.com/domgoer/election/etcd"
 )
 
 func main(){
     cli , _ := etcd.New([]string{"addr"},nil)
-    elec := goelection.New(cli,"id")
+    id := "uuid"
+    elec := github.com/domgoer/election.New(cli,id)
     stopCh := make(chan struct{}{})
     idCh , _ := elec.Elect(stopCh)
 
-    id := <- idCh
-    if id == "id" {
+    leaderID := <- idCh
+    if leaderID == id {
         fmt.Println("leader")
     }
 }
 ```
+
+## 异常处理
+
+如果etcd或者zk不可用， 会让所有服务都升级为leader， 直到etcd或者zk恢复会重新进行选举。 

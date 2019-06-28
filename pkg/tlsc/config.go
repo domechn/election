@@ -1,9 +1,4 @@
-// Copyright (c) 2018, dmc (814172254@qq.com),
-//
-// Authors: dmc,
-//
-// Distribution:生成一个tls客户端用于连接https服务端.
-package tlsclient
+package tlsc
 
 import (
 	"crypto/tls"
@@ -121,7 +116,7 @@ func getCert(options Options) ([]tls.Certificate, error) {
 	return []tls.Certificate{tlsCert}, nil
 }
 
-// Client 返回一个可以被客户端使用tls配置
+// Config 返回一个可以被客户端使用tls配置
 func Config(options Options) (*tls.Config, error) {
 	tlsConfig := ConfigDefault()
 	if options.CAFile != "" {

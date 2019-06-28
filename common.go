@@ -32,7 +32,7 @@ var (
 	// ErrKeyIsNotExist key is not exist at the beginning
 	ErrKeyIsNotExist = errors.New("selection watch: key is not exist")
 
-	// ErrHeartBeat connection is not available
+	// ErrHeartBeatFail connection is not available
 	ErrHeartBeatFail = errors.New("heart beat failed")
 
 	// ErrIsNotLeader node is not leader

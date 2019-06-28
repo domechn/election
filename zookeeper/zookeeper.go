@@ -17,7 +17,7 @@ import (
 	"strings"
 	"time"
 
-	"goelection"
+	"github.com/domgoer/election"
 	"github.com/samuel/go-zookeeper/zk"
 )
 

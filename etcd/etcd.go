@@ -18,8 +18,8 @@ import (
 
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/mvcc/mvccpb"
-	"goelection"
-	tlsc "goelection/pkg/tls"
+	"github.com/domgoer/election"
+	"github.com/domgoer/election/pkg/tlsc"
 	"google.golang.org/grpc/connectivity"
 )
 

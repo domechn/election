@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/clientv3"
-	"goelection"
+	"github.com/domgoer/election"
 )
 
 var etcdAddr = "127.0.0.1:2379"
