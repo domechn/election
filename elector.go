@@ -49,7 +49,7 @@ type WriteOptions struct {
 	KeepAlive bool
 }
 
-// Elector use set-watch mechanism to realize master-slave election
+// Elector use set-watch mechanism to realize main-subordinate election
 type Elector interface {
 	// Watch watch what happens to key
 	Watch(ctx context.Context, key string, stopCh <-chan struct{}) (<-chan *WatchRes, error)
